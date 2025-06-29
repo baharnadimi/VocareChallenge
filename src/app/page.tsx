@@ -20,23 +20,6 @@ import {
   MdNoteAdd,
 } from "react-icons/md";
 
-// const mockTermine: Termin[] = [
-//   {
-//     id: "1",
-//     title: "Physiotherapie",
-//     start: "2025-07-02T10:00:00Z",
-//     end: "2025-07-02T11:00:00Z",
-//     location: "Raum 101",
-//     notes: "Sportschuhe nicht vergessen",
-//   },
-//   {
-//     id: "2",
-//     title: "Arzttermin",
-//     start: "2025-07-10T14:00:00Z",
-//     end: "2025-07-10T14:30:00Z",
-//   },
-// ];
-
 export default function AppointmentsPage() {
   const [termine, setTermine] = useState<Termin[]>([]);
   const [filters, setFilters] = useState<Partial<Filters>>({});
