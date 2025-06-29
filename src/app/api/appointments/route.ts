@@ -25,7 +25,11 @@ export async function GET(req: Request) {
 
     if (error) throw error;
 
-    return NextResponse.json(data);
+    if (!data || data.length === 0) {
+      return NextResponse.json([], { status: 200 });
+    }
+
+    return NextResponse.json(data, { status: 200 });
   } catch (err: unknown) {
     let message = "Unbekannter Fehler";
 
