@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vocare Fullstack Challenge
 
-## Getting Started
+This project is a full-stack web application developed as part of the Vocare Fullstack Challenge. The goal is to create a SaaS solution for managing a care service to improve internal communication and automate recurring tasks.
 
-First, run the development server:
+## Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Vocare is a SaaS platform that rethinks digital health systems.  
+The focus is on:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Managing clients and patients
+- Managing medication lists
+- Purchasing care aids
+- Organizing internal tasks and appointments (for employees and clients)
+- Automating recurring processes in the care service
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies
 
-## Learn More
+- [Next.js](https://nextjs.org) (Frontend & Backend via API Routes)
+- [TailwindCSS](https://tailwindcss.com) (Styling)
+- [shadcn/ui](https://ui.shadcn.com) (UI components)
+- [Supabase](https://supabase.com) (Backend database & authentication)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Monthly and weekly calendar views
+- Appointment lists with filtering options (category, timeframe, client)
+- Hover details for appointments (based on shadcn/ui HoverCard)
+- Create, view, and edit appointments
+- Connection to Supabase with prepared database schema
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation and Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+
+- Node.js (version 16 or higher)
+- npm or yarn or pnpm
+
+### Local Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repository-url>
+   cd <project-folder>
+   ```
+
+---
+
+## Optional Refactoring Suggestion
+
+This dynamic API route (`/api/[table]`) is designed to allow fetching data from multiple tables
+such as `patients`, `categories`, or `appointments` using a single endpoint.
+
+### Advantages
+
+- Reduces repeated code across separate API routes.
+- More flexible for future scalability and new resources.
+
+### Disadvantages
+
+- Slightly harder to debug.
+- May allow access to unintended tables if misused, so a whitelist (`allowedTables`) is implemented as a safeguard.
+
+### Status
+
+Currently not used in the active version of the app – separate endpoints are preferred for stability.
+However, this code is included as a foundation for future refactoring if needed.
